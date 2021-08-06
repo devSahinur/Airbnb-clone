@@ -52,9 +52,9 @@ function Search({ searchResults }) {
                 </section>
 
                 
-                <section className=''>
-                    <Map
-
+                <section className='hidden xl:inline-flex xl:min-w-[600px]'>
+                    <Map 
+                        searchResults={searchResults}
                     />
                 </section>
            </main>
