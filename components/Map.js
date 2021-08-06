@@ -13,6 +13,7 @@ function Map({ searchResults }) {
         latitude: result.lat,
     }));
 
+    
     // The latitude and longitude of the center of locations coordinates
     const center = getCenter(coordinates);
 
