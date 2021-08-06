@@ -16,7 +16,7 @@ function Footer() {
                 <p>This is not a real site</p>
                 <p>Its a pretty awesome clone</p>
                 <p>Referrals accepted</p>
-                <p>Sahinur fan</p>
+                <p>Sahinur fan</p> 
             </div>
 
             <div className='space-y-4 text-xs text-gray-800'>
