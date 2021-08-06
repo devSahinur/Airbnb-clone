@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import { format } from 'date-fns';
 
-function Search() {
+function Search({ searchResults }) {
     const router = useRouter();
     const {location, startDate, endDate, noOfGuests} = router.query;
 
@@ -12,6 +12,7 @@ function Search() {
     const formattedEndDate =  format(new Date(endDate), "dd MMMM yy");
     const range = `${formattedStartDate} - ${formattedEndDate}`
 
+    console.log(searchResults)
     
     return (
         <div>
@@ -30,6 +31,10 @@ function Search() {
                         <p className='button'>Rooms and Beds</p>
                         <p className='button'>More Filters</p>
                     </div>
+
+                    {searchResults?.map((item) => (
+                        
+                    ))}
                 </section>
            </main>
 
@@ -39,3 +44,15 @@ function Search() {
 }
 
 export default Search;
+
+
+export async function getServerSideProps(){
+    const searchResults = await fetch('https://links.papareact.com/isz')
+    .then(res => res.json());
+
+    return {
+        props: {
+            searchResults,
+        }
+    }
+}
