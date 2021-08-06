@@ -13,7 +13,7 @@ export default function Home({ exploreData, cardsData }) {
         <title>Airbnb Sahinur</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+ 
       <Header/>
       <Banner/>
 
