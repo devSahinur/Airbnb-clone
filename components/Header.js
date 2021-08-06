@@ -6,7 +6,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker } from 'react-date-range';
 import { useRouter } from "next/dist/client/router";
 
-function Header() {
+function Header({ placeholder }) {
     const [searchInput, setSearchInput] = useState('');
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
@@ -62,7 +62,7 @@ function Header() {
                     value={searchInput}
                     onChange={(e) => setSearchInput(e.target.value)}
                     type="text" 
-                    placeholder='Start your search' 
+                    placeholder={placeholder || 'Start your search' }
                     className='flex-grow pl-5 bg-transparent outline-none text-gray-600 text-sm placeholder-gray-400'
                  />
                 <SearchIcon className='hidden md:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer md:mx-2 '/>
